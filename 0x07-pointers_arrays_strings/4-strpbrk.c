@@ -1,29 +1,33 @@
-#include "holberton.h"
-#include <stdio.h>
+#include "main.h"
+
 /**
- * _strpbrk - prints the consecutive caracters of s1 that are in s2.
- * @s: source string
- * @accept: searching string
- *
- * Return: new string.
+ * _strpbrk - searches a string for any of a set of bytes
+ * @s: String
+ * @accept: Set of bytes
+ * Return: A pointer to the byte in 's' that matches
+ * one of the bytes in accept, or returns NULL
  */
+
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j;
+int i, j;
+char *p;
 
-	for (i = 0; *(s + i); i++)
-	{
-		for (j = 0; *(accept + j); j++)
-		{
-			if (*(s + i) == *(accept + j))
-			{
-				break;
-			}
-		}
-		if (*(accept + j) != '\0')
-		{
-			return (s + i);
-		}
-	}
-	return (0);
+i = 0;
+while (s[i] != '\0')
+{
+j = 0;
+while (accept[j] != '\0')
+{
+if (accept[j] == s[i])
+{
+p = &s[i];
+return (p);
+}
+j++;
+}
+i++;
+}
+
+return (0);
 }

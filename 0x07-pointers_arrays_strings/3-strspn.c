@@ -1,24 +1,28 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _strspn - prints the consecutive caracters of s1 that are in s2.
- * @s: source string
- * @accept: searching string
- *
- * Return: new string.
+ * _strspn - search a string for a set of bytes
+ * @s: String to check
+ * @accept: String that checks
+ * Return: The number of bytes in the initial segment of s which consist
+ * only of bytes from accept.
  */
+
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j;
+	int i;
+	int j;
+	unsigned int length;
 
-	for (j = 0; *(s + j); j++)
+	length = 0;
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (i = 0; *(accept + i); i++)
-		{
-			if (*(s + j) == *(accept + i))
-				break;
-		}
-	if (*(accept + i) == '\0')
-		break;
+		for (j = 0; accept[j] != '\0' && accept[j] != s[i]; j++)
+			;
+		if (s[i] == accept[j])
+			length++;
+		if (accept[j] == '\0')
+			return (length);
 	}
-	return (j);
+	return (length);
 }

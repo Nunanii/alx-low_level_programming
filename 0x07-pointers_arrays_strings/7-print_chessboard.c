@@ -1,18 +1,18 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * print_chessboard - print a chessboard.
- * @a: source matrix
- *
- *
- * Return: chessboard.
+ * print_chessboard - Prints a representation of a chess board
+ * @a: 2d of the board
  */
+
 void print_chessboard(char (*a)[8])
 {
-	int i, j;
+	unsigned int i;
+	unsigned int j;
 
-	for (i = 0; i <= 7; i++)
+	for (i = 0; i < 8; i++)
 	{
-		for (j = 0; j <= 7; j++)
+		for (j = 0; j < 8; j++)
 		{
 			_putchar(a[i][j]);
 		}

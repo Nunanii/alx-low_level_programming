@@ -1,19 +1,24 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _memcpy - fills memory with another buffer.
- * @dest: source string
- * @src: string for filling
- * @n: lenght of buffer
- * Return: new string.
+ * _memcpy - copy memory area
+ * @dest: Destination for copying
+ * @src: Source to copy from
+ * @n: The number of bytes to copy
+ * Return: A  pointer to dest.
  */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i = 0;
+	int i = 0;
+	int j = 0;
 
-	while (i < n)
+	while (n > 0)
 	{
-		*(dest + i) = *(src + i);
+		dest[i] = src[j];
 		i++;
+		j++;
+		n--;
 	}
 	return (dest);
 }
